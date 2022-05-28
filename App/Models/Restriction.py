@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 import re
 
 class Restriction:
@@ -9,17 +9,16 @@ class Restriction:
         self.endTime = endTime
 
     def canDrive(self,date, time):
-        if self.isWithinDay(date) and self.isWithinHour(time):
-            return False
+        if self.isWithinDay(date):
+            if self.isWithinHour(time):
+                return False
         return True
 
     def isWithinDay(self, date):
-        print("This is executed")
-        return datetime.strptime(date, '%d/%m/%y').weekday() == self.dayOfWeek   
+        return datetime.strptime(date, '%d-%m-%Y').weekday() == self.dayOfWeek   
 
     def isWithinHour(self, time):
-        print("This is not executed")
-        return (datetime.strptime(time,'%H/%M') >= datetime.strptime( self.initTime,'%H/%M') and datetime.strptime(time,'%H/%M') <= datetime.strptime( self.endTime,'%H/%M'))  
+        return (datetime.strptime(time,'%H:%M') >= datetime.strptime( self.initTime,'%H:%M') and datetime.strptime(time,'%H:%M') <= datetime.strptime( self.endTime,'%H:%M'))  
 
     def hasRetriction(self, plate):
         if re.search(self.regexExpression, plate):
