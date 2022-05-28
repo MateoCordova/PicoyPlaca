@@ -1,10 +1,15 @@
 from flask import Flask
-import Models
+from Models import Plate
 import Database.db as db
-from Models.Restriction import Restriction
 app = Flask(__name__)
 
 
 @app.route("/")
-def hello_world():
+def index():
     return "<p>Hello, World!</p>"
+
+@app.route("/canDrive")
+def canDrive(plate, date, hour):
+    plateObj = Plate(plate)
+    for restriction in db.restrictions:
+        plateObj.restrictions.add(restriction.hasRetriction())

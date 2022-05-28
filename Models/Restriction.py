@@ -24,3 +24,4 @@ class Restriction:
     def hasRetriction(self, plate):
         if re.search(self.regexExpression, plate):
             return self
+        return None
