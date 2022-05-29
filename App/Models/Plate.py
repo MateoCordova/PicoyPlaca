@@ -1,3 +1,4 @@
+import re
 class Plate:  
     def __init__(self, value):
         self.value = value
@@ -8,6 +9,8 @@ class Plate:
             if not restriction.canDrive(date,time):
                 return False
         return True
-        
-    def isValid(self,value):
+    
+    def isValid(self):
+        if re.search("^[a-zA-Z]{3}[0-9]{4}$",self.value):
+            return True
         return False
