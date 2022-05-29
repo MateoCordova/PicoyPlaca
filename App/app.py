@@ -6,7 +6,7 @@ import os
 
 template_dir = os.path.abspath('./Views/')
 
-app = Flask(__name__,template_folder=template_dir)
+app = Flask(__name__,template_folder=template_dir,static_folder='./Content/')
 
 @app.route("/")
 def index():
