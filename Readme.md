@@ -9,10 +9,9 @@ This web application aims to be able to predict, given a vehicle license plate, 
 This proyect was made with Python 3.10.4, using Flask minimal framework. After you have installed Python, open a terminal in the root of the repository and run the following commands:
 
 ```bash
-python -m venv .venv
-& ./.venv/Scripts/Activate.ps1
-pip install requirements.txt
+pip install -r requirements.txt
 cd ./App
+flask init-db
 flask run
 ```
 
