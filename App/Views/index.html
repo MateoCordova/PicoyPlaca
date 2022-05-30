@@ -36,7 +36,7 @@
                             <span name="hour"></span>
                             <br>
                             <div class="w3-container">
-                                <button id="evalPlateButton" onclick="evalPlate()" class="w3-button w3-blue w3-round-xxlarge w3-center" style="margin: auto; max-width: 150px; white-space: normal;" disabled>Enviar</button>
+                                <button id="evalPlateButton" onclick="evalPlate()" class="w3-button w3-blue w3-round-xxlarge w3-center" style="margin: auto; max-width: 150px; white-space: normal;">Enviar</button>
                             </div>
                             <br>
                             <div class="w3-center w3-container">
@@ -69,22 +69,28 @@
 
             function validatePlate(){
                 var isCorrect = regexPlate.test(plateInput.value)
-                if(isCorrect){
-                    errorPlate = "<p><strong>Formato incorrecto.</strong> Inserte la placa completa sin guión ni espacio. Ej: PPP0505</p>"
+                if(!isCorrect){
+                    errorPlate.innerHTML = "<p><strong>Formato incorrecto.</strong> Inserte la placa completa sin guión ni espacio. Ej: PPP0505</p>"
+                } else {
+                    errorPlate.innerHTML = ""
                 }
                 return isCorrect 
             }
             function validateDate(){
                 var isCorrect = regexDate.test(dateInput.value)
-                if(isCorrect){
-                    errorDate = "<p><strong>Formato incorrecto.</strong> Inserte la fecha en formato dd-mm-aaaa. Ej: 15-06-2022</p>"
+                if(!isCorrect){
+                    errorDate.innerHTML = "<p><strong>Formato incorrecto.</strong> Inserte la fecha en formato dd-mm-aaaa. Ej: 15-06-2022</p>"
+                } else {
+                    errorDate.innerHTML = ""
                 }
                 return isCorrect
             }
             function validateHour(){
                 var isCorrect = regexHour.test(hourInput.value)
-                if(isCorrect){
-                    errorTime = "<p><strong>Formato incorrecto.</strong> Inserte la fecha en formato hh:mm en 24h. Ej: 9:15</p>"
+                if(!isCorrect){
+                    errorTime.innerHTML = "<p><strong>Formato incorrecto.</strong> Inserte la fecha en formato hh:mm en 24h. Ej: 9:15</p>"
+                } else {
+                    errorTime.innerHTML = ""
                 }
                 return isCorrect
             }
@@ -106,7 +112,6 @@
                     }
                 } else {
                     result.innerHTML = "";
-                    evalPlateButton.disabled =true;
                 }
             }
             function today(){

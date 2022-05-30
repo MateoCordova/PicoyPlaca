@@ -16,7 +16,7 @@ flask run
 ```
 
 # Use and testing
-Open browser at http://localhost:8000 for a web user experience. You could also test the app as an API using as endpoint  http://localhost:8000/plate/canDrive which uses the following parameters:
+Open browser at http://localhost:5000 for a web user experience. You could also test the app as an API using as endpoint  http://localhost:5000/plate/canDrive which uses the following parameters:
 
 ```json
 {

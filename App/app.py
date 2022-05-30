@@ -10,7 +10,6 @@ template_dir = os.path.abspath('./Views/')
 
 def create_app(test_config=None):
     app = Flask(__name__,template_folder=template_dir,static_folder='./Content/')
-    app.run(port=8000)
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
