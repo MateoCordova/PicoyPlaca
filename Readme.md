@@ -1,6 +1,6 @@
 ## Pico y Placa Predictor
 # About
-This web application aims to be able to predict, given a vehicle license plate, a date and a time, if a private vehicle can travel in the city of Quito following the current restriction rules:
+This web application aims to be able to predict, given a vehicle license plate, a date and a time, if a private vehicle can travel in the city of Quito following the current restriction rules. You can test the app at http://35.239.196.234:8080/ (temporarly using Google Gloud Compute)
 
 ![alt text](https://github.com/MateoCordova/PicoyPlaca/blob/master/App/Content/reglas.jpg?raw=true)
 

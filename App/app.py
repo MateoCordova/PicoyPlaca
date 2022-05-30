@@ -7,6 +7,7 @@ import os
 from App.Models.Restriction import Restriction
 
 template_dir = os.path.abspath('./Views/')
+print(template_dir)
 
 def create_app(test_config=None):
     app = Flask(__name__,template_folder=template_dir,static_folder='./Content/')
