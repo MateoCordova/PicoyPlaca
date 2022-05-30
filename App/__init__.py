@@ -11,7 +11,7 @@ print(template_dir)
 
 
 def create_app(test_config=None):
-    app = Flask(__name__,template_folder=template_dir,static_folder='./Content/')
+    app = Flask(__name__,template_folder='./Views/',static_folder='./Content/')
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
